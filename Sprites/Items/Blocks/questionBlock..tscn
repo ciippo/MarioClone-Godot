@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Items/Blocks/question.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Items/Blocks/questionBlock.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.98051, 8.03334 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.95694, 19.9966 )
+
+[node name="Sprite" type="Sprite" index="0"]
+
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 5
+script = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="bottomBlock" type="Area2D" parent="." index="1"]
+
+position = Vector2( 0.305636, -6.06688 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomBlock" index="0"]
+
+position = Vector2( -0.331641, 14.0748 )
+rotation = 4.71089
+scale = Vector2( 0.0766965, 0.384349 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="bottomBlock" to="." method="_on_bottomBlock_body_entered"]
+
+
