@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floor.png-d43f03cb7a8f42941311ed90ed2021b9.stex"
+path="res://.import/mushroom.png-94674534fa7b1656ddaeec4596345cd0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://floor.png"
-dest_files=[ "res://.import/floor.png-d43f03cb7a8f42941311ed90ed2021b9.stex" ]
+source_file="res://Items/Mushroom/mushroom.png"
+dest_files=[ "res://.import/mushroom.png-94674534fa7b1656ddaeec4596345cd0.stex" ]
 
 [params]
 

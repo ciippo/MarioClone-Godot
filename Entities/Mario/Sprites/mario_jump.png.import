@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floor.png-d43f03cb7a8f42941311ed90ed2021b9.stex"
+path="res://.import/mario_jump.png-e7fd88f44f294fc8beaecfad5e118f98.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://floor.png"
-dest_files=[ "res://.import/floor.png-d43f03cb7a8f42941311ed90ed2021b9.stex" ]
+source_file="res://Entities/Mario/Sprites/mario_jump.png"
+dest_files=[ "res://.import/mario_jump.png-e7fd88f44f294fc8beaecfad5e118f98.stex" ]
 
 [params]
 

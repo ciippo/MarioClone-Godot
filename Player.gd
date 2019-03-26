@@ -17,7 +17,7 @@ func _physics_process(delta):
 	if(!is_on_floor()):
 		velocity.y += delta * gravity
 	#Axis X
-	var modifier = get_aceleration_modifier()
+	var modifier = get_acceleration_modifier()
 	if(modifier != 0):
 		velocity.x += delta * acceleration * modifier;
 	else:
@@ -33,25 +33,18 @@ func _physics_process(delta):
 		velocity.y = 0
 		jump_position = null
 	move_and_slide(velocity,Vector2(0,-1))
-	#print(velocity)
 
 # Usado para la animación de sliding
 var sliding
 
 # Devuelve el modificador de aceleración. Si el personaje se está desplazando en una dirección y se pulsa la contraria
 # se modificará la aceleración base para que sea el doble y la "frenada" del cuerpo no sea tan larga.
-func get_aceleration_modifier():
+func get_acceleration_modifier():
 	var modifier = 0
 	if(Input.is_action_pressed("ui_right")):
-		if(velocity.x < 0):
-			modifier = 2
-		else:
-			modifier = 1
+		modifier = 2 if(velocity.x < 0) else 1
 	elif(Input.is_action_pressed("ui_left")):
-		if(velocity.x > 0):
-			modifier = -2
-		else:
-			modifier = -1
+		modifier = -2 if(velocity.x > 0) else -1
 	sliding = abs(modifier) == 2
 	return modifier
 
