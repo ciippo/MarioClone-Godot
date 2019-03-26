@@ -4,9 +4,13 @@ var initialPosition:Vector2
 var animationSpawn:bool
 var spawned:bool
 var movingItem := true
+export var itemTexture:Texture
+export var itemVelocity := Vector2(150,300)
 
 func _ready():
 	initialPosition = $Item.position
+	$Item.velocity = itemVelocity
+	$Item.set_sprite_texture(itemTexture)
 
 func _physics_process(delta):
 	if(animationSpawn):

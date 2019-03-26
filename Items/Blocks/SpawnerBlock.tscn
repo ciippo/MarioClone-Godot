@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Items/Blocks/Block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Items/Blocks/SpawnerBlock.gd" type="Script" id=2]
 [ext_resource path="res://Items/Blocks/Item.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Items/Mushroom/mushroom.png" type="Texture" id=4]
-[ext_resource path="res://Items/Blocks/QuestionBlock/question_animation.tres" type="Texture" id=5]
+[ext_resource path="res://Items/Blocks/QuestionBlock/question_animation.tres" type="Texture" id=4]
 
 [node name="SpawnerBlock" instance=ExtResource( 1 )]
 position = Vector2( 24.7886, 54.1766 )
@@ -13,10 +12,9 @@ collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="Item" parent="." index="0" instance=ExtResource( 3 )]
-texture = ExtResource( 4 )
 
 [node name="SpriteBlock" parent="." index="2"]
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="BottomBlockShape" parent="BottomBlock" index="0"]
 position = Vector2( 0.0142784, 8.02693 )
